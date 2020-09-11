@@ -23,6 +23,7 @@ cnovr_model * swadgescreen;
 cnovr_model * swadgeleds;
 cnovr_model * swadgebuttons;
 cnovr_model * swadgemodel;
+cnovr_model * swadgemodelcollide;
 
 cnovr_texture * oled_texture;
 
@@ -127,11 +128,15 @@ static void example_scene_setup( void * tag, void * opaquev )
 	swadgemodel->pose = &store->swadgemodelpose;
 	CNOVRModelLoadFromFileAsync( swadgemodel, "swadge.obj:barytc" );
 
+	swadgemodelcollide = CNOVRModelCreate( 0, GL_TRIANGLES );
+	swadgemodelcollide->pose = &store->swadgemodelpose;
+	CNOVRModelLoadFromFileAsync( swadgemodelcollide, "swadge-collide.obj" );
+
 
 	modelcapture.tag = 0;
-	modelcapture.opaque = swadgemodel;
+	modelcapture.opaque = swadgemodelcollide;
 	modelcapture.cb = CNOVRFocusDefaultFocusEvent;
-	CNOVRModelSetInteractable( swadgemodel, &modelcapture );
+	CNOVRModelSetInteractable( swadgemodelcollide, &modelcapture );
 
 
 	swadgescreen = CNOVRModelCreate( 0, GL_TRIANGLES );
@@ -165,7 +170,8 @@ static void example_scene_setup( void * tag, void * opaquev )
 	}
 	{
 		swadgebuttons = CNOVRModelCreate( 0, GL_TRIANGLES );
-		cnovr_point3d offsets[5] = { { -.95, -1.08, .25 }, {-.64, -.76,.25}, { -.31, -1.08, .25 }, { -.64, -1.4, .25} , { .68, -1.08, .25 } };
+		cnovr_point3d offsets[5] = { { -.95, -1.08, .25 }, {-.64, -1.4,.25},
+			{ -.31, -1.08, .25 }, { -.64, -.76, .25} , { .68, -1.08, .25 } };
 		for( i = 0; i < 5; i++ )
 		{
 			buttondowns[i] = 0xffffffff;
