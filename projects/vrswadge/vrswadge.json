@@ -1,0 +1,25 @@
+{
+	"searchfolders" : [
+		"projects/vrswadge"
+	],
+	"cfiles" : [
+		{
+			"cfile" : "vrswadge.c",
+			"identifier" : "",
+			"disabled" : false,
+		},
+		{
+			"cfile" : "modules/openvrobjects/openvrobjects.c",
+			"identifier" : "wireframe",
+			"comment":"lineify",
+			"disabled" : false,
+		},
+		{
+			"cfile" : "draggablewindows/draggablewindows.c",
+			"identifier" : "dockable",
+			"disabled" : false,
+		},
+
+	]
+}
+

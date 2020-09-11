@@ -1,0 +1,6 @@
+[submodule "cnovr"]
+	path = cnovr
+	url = https://github.com/cnlohr/cnovr
+[submodule "Super-2021-Swadge-FW-Sandbox"]
+	path = Super-2021-Swadge-FW-Sandbox
+	url = https://github.com/AEFeinstein/Super-2021-Swadge-FW-Sandbox
