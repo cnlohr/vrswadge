@@ -17,9 +17,22 @@
 		{
 			"cfile" : "draggablewindows/draggablewindows.c",
 			"identifier" : "dockable",
+			"disabled" : true,
+		},
+		{
+			"cfile" : "modules/objfile/objfile.c",
+			"identifier" : "environment",
+			"model" : "playarea.obj:barytc",
+			"shader" : "fakelines",
+			"rendermesh" : "2",
+			"shaderprefix" : "#define OPAQUIFY",
 			"disabled" : false,
 		},
-
+		{
+			"cfile" : "modules/camera/camera.c",
+			"identifier" : "advanced,preview",
+			"disabled" : false,
+		},
 	]
 }
 

@@ -122,7 +122,7 @@ static void example_scene_setup( void * tag, void * opaquev )
 
 	shaderOLED = CNOVRShaderCreate( "assets/oled" );
 	shaderLED = CNOVRShaderCreate( "assets/led" );
-	shaderLines = CNOVRShaderCreate( "assets/fakelines" );
+	shaderLines = CNOVRShaderCreateWithPrefix( "assets/fakelines", "#define OPAQUIFY" );
 
 	swadgemodel = CNOVRModelCreate( 0, GL_TRIANGLES );
 	swadgemodel->pose = &store->swadgemodelpose;
@@ -145,7 +145,7 @@ static void example_scene_setup( void * tag, void * opaquev )
 	pose_make_identity( &poseofs );
 	poseofs.Pos[0] += .05;
 	poseofs.Pos[1] += .11;
-	poseofs.Pos[2] -= .8;
+	poseofs.Pos[2] -= .75;
 	CNOVRModelAppendMesh( swadgescreen, 1, 1, 1, (cnovr_point3d){.63,.35,1}, &poseofs, 0 );
 		//cnovr_model * m, int rows, int cols, int flipv, cnovr_point3d size, cnovr_pose * poseofs_optional, cnovr_point4d * extradata );
 
